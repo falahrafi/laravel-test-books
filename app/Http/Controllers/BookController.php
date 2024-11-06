@@ -13,7 +13,11 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        // Fetch books with related author data
+        $books = Book::with('author')->get();
+
+        // Pass books data to the view
+        return view('pages.books.index', compact('books'));
     }
 
     /**
@@ -21,7 +25,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.books.create');
     }
 
     /**

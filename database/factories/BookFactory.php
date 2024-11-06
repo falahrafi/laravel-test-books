@@ -18,8 +18,8 @@ class BookFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => ucwords(fake()->words(3, true)),
-            'serial_number' => fake()->numerify('##########'),
+            'title' => ucwords(rtrim(fake()->realText($maxNbChars = 20, $indexSize = 1), '.')),
+            'serial_number' => fake()->isbn10(),
             'published_at' => fake()->date(),
             'author_id' => Author::factory(),
         ];

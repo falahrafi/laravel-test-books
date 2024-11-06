@@ -13,7 +13,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.authors.index');
     }
 
     /**
