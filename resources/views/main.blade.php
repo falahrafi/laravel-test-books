@@ -15,7 +15,8 @@
       <!-- Font Awesome Icons -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
       {{-- Flowbite CSS --}}
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css"  rel="stylesheet" />
+      {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css"  rel="stylesheet" /> --}}
+      <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
       {{-- tailwind CSS --}}
       @vite('resources/css/app.css')
       {{-- Scroll Reveal --}}
@@ -29,7 +30,7 @@
       @yield('main-content')
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+    
 
     @vite('resources/js/app.js')
   </body>

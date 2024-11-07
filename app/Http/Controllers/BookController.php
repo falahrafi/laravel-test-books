@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
+use App\Models\Author;
+use Illuminate\Http\RedirectResponse;
 
 class BookController extends Controller
 {
@@ -25,15 +27,21 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('pages.books.create');
+        // Fetch author data
+        $authors = Author::all();
+
+        // Pass author data to the view
+        return view('pages.books.create', compact('authors'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBookRequest $request)
+    public function store(StoreBookRequest $request): RedirectResponse
     {
-        //
+        Book::create($request->all());
+        return redirect()->route('books.index')
+        ->withSuccess('New book is added successfully.');
     }
 
     /**

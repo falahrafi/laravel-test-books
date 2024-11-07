@@ -11,7 +11,7 @@
             <svg class="w-5 h-5 me-3 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/>
             </svg>
-            Add Data
+            Add a New Book
         </a>
     </div>
   </div>
@@ -19,11 +19,11 @@
   <table id="selection-table">
       <thead>
           <tr>
-              {{-- <th>
+              <th>
                   <span class="flex items-center">
                       #
                   </span>
-              </th> --}}
+              </th>
               <th>
                   <span class="flex items-center">
                       Title
@@ -66,12 +66,12 @@
       <tbody>
         @forelse ($books as $book)
         <tr class="hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
-            {{-- <th class="font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $loop->iteration }}</th> --}}
-            <td class="text-lg">{{ $book->title }}</td>
-            <td class="text-md">{{ $book->serial_number }}</td>
-            <td class="text-md">{{ $book->published_at }}</td>
+            <th class="font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $loop->iteration }}</th>
+            <td class="text-lg text-gray-900 dark:text-white">{{ $book->title }}</td>
+            <td class="text-md"><p class="bg-blue-100 text-blue-800 font-medium px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300 text-center">{{ $book->serial_number }}</p></td>
+            <td class="text-md text-gray-900 dark:text-white">{{ date_format(date_create($book->published_at),"M d, Y") }}</td>
             <td>
-                <div class="text-lg">
+                <div class="text-lg text-gray-900 dark:text-white ">
                     {{ $book->author->name }}
                 </div>
                 <div class="text-md">
