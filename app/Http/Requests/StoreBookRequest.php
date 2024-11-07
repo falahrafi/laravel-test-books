@@ -27,5 +27,11 @@ class StoreBookRequest extends FormRequest
             'published_at' => 'required|date',
             'author_id' => 'required|integer|exists:App\Models\Author,id',
         ];
+        return [
+            'title' => 'required|string|max:250',
+            'serial_number' => 'required|string|max:10|regex:/^[0-9]+$/|unique:books',
+            'published_at' => 'required|date',
+            'author_id' => 'required|integer|exists:App\Models\Author,id',
+        ];
     }
 }

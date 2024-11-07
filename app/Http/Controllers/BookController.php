@@ -70,7 +70,7 @@ class BookController extends Controller
     {
         $book->update($request->all());
         return redirect()->route('books.index')
-            ->withSuccess('Product is updated successfully.');
+            ->withSuccess('Book is updated successfully.');
     }
 
     /**
