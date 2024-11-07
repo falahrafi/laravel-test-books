@@ -1,6 +1,6 @@
-# Laravel Test Books Project 📚
+# Laravel Test Books Project
 
-![Project Logo](logo-placeholder.png)
+<img src="./preview-image.png" alt="Preview Image"/>
 
 ## Overview 🌟
 This project was created by **Muhammad Falah Abdurrafi** (falahabdurrafi@gmail.com) as part of a technical test for Nine Dragon Labs. The task involves building a simple CRUD application using **Laravel 10** with the following database structure:
@@ -74,5 +74,3 @@ Ensure you have the following installed:
    php artisan serve
    npm run dev
    ```
-
-## Preview 🔎
