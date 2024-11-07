@@ -1,10 +1,10 @@
 @extends('main')
 
 @section('main-content')
-<div class="p-4 pt-16 sm:ml-64">
+<div class="p-8 pt-4 sm:ml-64">
   <div class="flex">
     <div class="flex-1">
-        <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">Add a New <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Book</span></h1>
+        <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">Add a New <span class="text-transparent bg-clip-text bg-gradient-to-r to-custom-mocca-dark from-custom-mocca-light">Book</span></h1>
     </div>
   </div>
   <form class="max-w-lg" action="{{ route('books.store') }}" method="post">
@@ -52,7 +52,12 @@
         <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">{{ $errors->first('author_id') }}</p>
       @endif
     </div>
-    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+    <button type="submit" class="inline-flex items-center text-white bg-gradient-to-r from-custom-mocca-light to-custom-mocca-dark hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-stone-300 dark:focus:ring-stone-800 shadow-lg shadow-stone-500/50 dark:shadow-lg dark:shadow-stone-800/80 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2 ">
+      <svg class="w-5 h-5 me-3 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/>
+      </svg>      
+      Add Book
+    </button>
   </form>
 </div>
 @endsection

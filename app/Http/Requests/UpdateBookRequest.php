@@ -11,7 +11,7 @@ class UpdateBookRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class UpdateBookRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required|string|max:250',
+            'serial_number' => 'required|string|max:10|regex:/^[0-9]+$/|unique:books,serial_number,'.$this->book->id,
+            'published_at' => 'required|date',
+            'author_id' => 'required|integer|exists:App\Models\Author,id',
         ];
     }
 }

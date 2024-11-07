@@ -57,15 +57,20 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        return view('pages.books.edit', [
+            'book' => $book,
+            'authors' => Author::all()
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBookRequest $request, Book $book)
+    public function update(UpdateBookRequest $request, Book $book): RedirectResponse
     {
-        //
+        $book->update($request->all());
+        return redirect()->route('books.index')
+            ->withSuccess('Product is updated successfully.');
     }
 
     /**
@@ -73,6 +78,9 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        $book->delete();
+
+        // Return a JSON response indicating success
+        return response()->json(['success' => true, 'message' => 'Book deleted successfully']);
     }
 }

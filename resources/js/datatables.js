@@ -31,6 +31,11 @@ if (
                 }
                 return tr;
             },
+            classes: {
+                // add custom HTML classes, full list: https://fiduswriter.github.io/simple-datatables/documentation/classes
+                // we recommend keeping the default ones in addition to whatever you want to add because Flowbite hooks to the default classes for styles
+                // table: "datatable-table",
+            },
         };
         if (rowNavigation) {
             options.rowNavigation = true;

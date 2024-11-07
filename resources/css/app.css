@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  ::-moz-selection {
+    /* Code for Firefox */
+    color: theme('colors.white');
+    background: theme('colors.custom-mocca-dark');
+  }
+
+  ::selection {
+    color: theme('colors.white');
+    background: theme('colors.custom-mocca-dark');
+  }
+
+  body {
+    position: relative;
+    background: #ffffff url('../../public/assets/bg-blur.png') repeat right bottom;
+    background-size: 100%;
+    color: #1d1d1d;
+  }
+}
+
+@layer components {
+
+  .datatable-table thead {
+    @apply bg-gradient-to-br from-white/90 to-white/40 text-gray-800 rounded-lg border-t border-t-white border-l border-l-white/80 border-b border-b-white/20 backdrop-blur-xl shadow-lg shadow-stone-600/5 !important
+  }
+
+  .datatable-input {
+    @apply bg-gradient-to-br from-white/90 to-white/40 text-gray-800 rounded-lg border border-gray-200 backdrop-blur-xl shadow-lg shadow-stone-600/15 !important
+  }
+
+  .datatable-selector {
+    @apply outline-none ring-0 bg-gradient-to-br from-white/90 to-white/40 text-gray-800 rounded-lg border border-gray-200 backdrop-blur-xl shadow-lg shadow-stone-600/15
+  }
+
+}
